@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 class taskList extends Component {
@@ -6,24 +6,29 @@ class taskList extends Component {
 
   render() {
     return (
-     
-      <ul>
+      <Fragment>
       {
           this.props.taskLists.map((item) =>
-              <li key={item.id}>
-              <input type="checkbox" value={item.isDone} onClick={()=>this.props.taskDone(item.id)} ></input>
-              <p>{item.id}</p>
-              <p style={{
+              <div key={item.id} 
+              style={{
+                display: "flex",
+                margin: 10,
+                alignItems: "center"}}>
+
+              <input type="checkbox" 
+              value={item.isDone} 
+              onClick={()=>this.props.taskDone(item.id)} ></input>
+              
+              <span style={{
                 flex: 1,
                 textDecoration: item.isDone ? "line-through" : "none"
-              }}>{item.name}</p><p>
-              {item.isDone}</p> 
+              }}>{item.name}</span>
+               
               <button onClick={()=>this.props.deleteTask(item.id)}>Delete</button> 
-              </li>
+              </div>
           )
       }
-      </ul>
-      
+      </Fragment>
     )
   }
 }

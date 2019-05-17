@@ -47,10 +47,15 @@ class index extends Component {
       <div>
       <TaskForm onChange={this.onChange} value={taskName} addListitem={this.addListitem}></TaskForm>
       <TaskList taskLists={taskLists} taskDone={this.taskDone} deleteTask={this.deleteTask} ></TaskList>
-        
+      <div>
+      <button onClick={this.showall} >All</button>
+      <button onClick={this.completed} >Completed</button>
+      <button onClick={this.pending} >Pending</button>
+      </div>  
+
       </div>
     )
   }
 }
 
-export default index;
+export default index; 
