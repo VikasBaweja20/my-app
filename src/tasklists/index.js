@@ -1,17 +1,28 @@
 import React, { Component } from 'react'
 import TaskForm from './taskForm';
 import TaskList from './taskList';
-
+import TaskFilter from './taskFilter';
 class index extends Component {
   state={
       taskName:"",
       taskLists:[]
   }
 
+  constructor(props) {
+    super(props);
+    this.getTasksData();
+  }
+
   onChange= e =>{
       console.log(e.target.value);
       this.setState({taskName: e.target.value})
   }
+
+  getTasksData = async () => {
+    const res = await fetch('http://localhost:3004/tasks');
+    const taskLists = await res.json();
+    this.setState({ taskLists });
+  };
 
   addListitem = e => {
       e.preventDefault();
@@ -45,13 +56,10 @@ class index extends Component {
       const{ taskName, taskLists }=this.state;
     return (
       <div>
+      <h3>To Do</h3>
       <TaskForm onChange={this.onChange} value={taskName} addListitem={this.addListitem}></TaskForm>
       <TaskList taskLists={taskLists} taskDone={this.taskDone} deleteTask={this.deleteTask} ></TaskList>
-      <div>
-      <button onClick={this.showall} >All</button>
-      <button onClick={this.completed} >Completed</button>
-      <button onClick={this.pending} >Pending</button>
-      </div>  
+      <TaskFilter showall={this.showall} completed={this.completed} pending={this.pending}></TaskFilter>
 
       </div>
     )
