@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class taskForm extends Component {
+    constructor(props){
+        super(props);
+        console.log( props);   
+    }
   render() {
     return (
         <form>

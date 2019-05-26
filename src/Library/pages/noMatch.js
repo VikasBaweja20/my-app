@@ -6,7 +6,7 @@ export default class noMatch extends Component {
   render() {
     return (
       <div>
-        <h1> couldnt find tha page</h1>
+        <h1> Couldnt find the page you are looking for</h1>
       </div>
     )
   }

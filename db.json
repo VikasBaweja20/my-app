@@ -16,9 +16,137 @@
   "profile": {
     "name": "typicode"
   },
-  "tasks":[
-    {"id":1, "name": "Task 1" , "isDone":false},
-    {"id":2, "name": "Task 2" , "isDone":false},
-    {"id":3, "name": "Task 3" , "isDone":false}
-]
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task 1",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "name": "Task 2",
+      "isDone": false
+    },
+    {
+      "name": "Task 5",
+      "isDone": false,
+      "id": 5
+    },
+    {
+      "name": "Task 6",
+      "isDone": false,
+      "id": 6
+    },
+    {
+      "name": "Task 7",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "name": "Task 8",
+      "isDone": false,
+      "id": 8
+    },
+    {
+      "name": "Task 8",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "name": "Task 9",
+      "isDone": false,
+      "id": 11
+    },
+    {
+      "name": "task 10",
+      "isDone": false,
+      "id": 12
+    },
+    {
+      "name": "Task 12",
+      "isDone": false,
+      "id": 13
+    },
+    {
+      "name": "Task 13",
+      "isDone": false,
+      "id": 14
+    },
+    {
+      "name": "Task 14",
+      "isDone": false,
+      "id": 15
+    },
+    {
+      "name": "Task 15",
+      "isDone": false,
+      "id": 16
+    },
+    {
+      "name": "Task 16",
+      "isDone": false,
+      "id": 17
+    },
+    {
+      "name": "Task 17",
+      "isDone": false,
+      "id": 18
+    },
+    {
+      "name": "Task 18",
+      "isDone": false,
+      "id": 19
+    }
+  ],
+  "courses": [
+    {
+      "id": "react-flux-building-applications",
+      "title": "Building Applications in React and Flux",
+      "watchHref": "http://www.pluralsight.com/courses/react-flux-building-applications",
+      "authorId": "dan-wahlin",
+      "length": "5:08",
+      "category": "react"
+    },
+    {
+      "id": "clean-code",
+      "title": "Clean Code: Writing Code for Humans",
+      "watchHref": "http://www.pluralsight.com/courses/writing-clean-code-humans",
+      "authorId": "cory-house",
+      "length": "3:10",
+      "category": "Software Practices"
+    },
+    {
+      "id": "architecture",
+      "title": "Edited Architecting Applications for the Real World",
+      "watchHref": "http://www.pluralsight.com/courses/architecting-applications-dotnet",
+      "authorId": "cory-house",
+      "length": "2:52",
+      "category": "Software Architecture"
+    },
+    {
+      "id": "career-reboot-for-developer-mind",
+      "title": "Becoming an Outlier: Reprogramming the Developer Mind",
+      "watchHref": "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
+      "authorId": "cory-house",
+      "length": "2:30",
+      "category": "Career"
+    }
+  ],
+  "authors": [
+    {
+      "id": "cory-house",
+      "firstName": "Cory",
+      "lastName": "House"
+    },
+    {
+      "id": "scott-allen",
+      "firstName": "Scott",
+      "lastName": "Allen"
+    },
+    {
+      "id": "dan-wahlin",
+      "firstName": "Dan",
+      "lastName": "Wahlin"
+    }
+  ]
 }

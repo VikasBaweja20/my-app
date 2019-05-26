@@ -2,14 +2,23 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class taskFilter extends Component {
- 
+    static propTypes = {
+        prop: PropTypes
+       
+      }
+
+      constructor(props){
+        super(props);
+        console.log(props);
+
+      }
 
   render() {
     return (
         <div>
-        <button onClick={this.props.showall} >All</button>
-        <button onClick={this.props.completed} >Completed</button>
-        <button onClick={this.props.pending} >Pending</button>
+        <button type="button" onClick={this.props.showall} >All</button>
+        <button type="button" onClick={this.props.completed} >Completed</button>
+        <button type="button" onClick={this.props.pending} >Pending</button>
         </div> 
     )
   }
