@@ -3,10 +3,26 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Header from './Library/Components/header';
 import Footer from './Library/Components/footer';
-import Home from './Library/pages/home';
-import About from './Library/pages/about';
-import NoMatch from './Library/pages/noMatch';
-import Tasklist from './tasklists/index';
+
+import loadable from '@loadable/component';
+
+const HomeAsync = loadable(() => import('./Library/pages/home'), {
+  fallback: <div>Loading...</div>,
+});
+
+const AboutAsync = loadable(() => import('./Library/pages/about'), {
+  fallback: <div>Loading...</div>,
+});
+
+const TasklistAsync = loadable(() => import('./tasklists/index'), {
+  fallback: <div>Loading...</div>,
+});
+
+const NoMatchAsync = loadable(() => import('./Library/pages/noMatch'), {
+  fallback: <div>Loading...</div>,
+});
+
+
 function App() {
   return (
         <Router>
@@ -21,17 +37,15 @@ function App() {
             <Header />
             <main style={{ flex: 1 }}>
               <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/about/" component={About} />
-                <Route path="/tasklist/" component={Tasklist} />
-                <Route component={NoMatch} />
+                <Route path="/" exact component={HomeAsync} />
+                <Route path="/about/" component={AboutAsync} />
+                <Route path="/tasklist/" component={TasklistAsync} />
+                <Route component={NoMatchAsync} />
               </Switch>
             </main>
             <Footer />
           </div>
         </Router>
-     
-    
     
   );
 }

@@ -15,35 +15,21 @@ export default class about extends Component {
         const {location : {state}}= props;
 
         this.state = {
-            course: state.course,
-            authors: state.authors
+            course: state.course
         }
 
     }
-    formatAuthors=()=>{
-      const {authors}=this.state;
-      const authorsList=authors.map(item=>({
-        value: item.id,
-        text: `${item.firstName} ${item.lastName}`
-      }));
-      this.setState({authors: authorsList});
-    };
-
     componentDidMount(){
-      this.formatAuthors();
     }
 
-    
-
     changeValue=e=>{
-      const { course} = this.state
+        const { course} = this.state
       this.setState({ course: { ...course, [e.target.name]:e.target.value }})  ;
       console.log(course);
     }
 
   render() {
-      const {course,authors}= this.state;
-      console.log(authors);
+      const {course}= this.state;
     return (
       <div>
       <h1>About</h1>
@@ -58,9 +44,7 @@ export default class about extends Component {
         </div>
         <div>
         <label>Author</label>
-        <select value={course.authorId} name='authorId' onChange={this.changeValue} >
-        {authors && authors.map(item=> <option key={item.id} value={item.value}>{item.text}</option>)}
-        </select>
+        <input type="text"  name='authorId' value={course.authorId} onChange={this.changeValue}/>
         </div>
         <div>
         <label>Length</label>
@@ -70,7 +54,7 @@ export default class about extends Component {
         <label>Category</label>
         <input type="text"  name='category' value={course.category} onChange={this.changeValue}/>
         </div>
-        <button type="button">{course.authorId?'Update':'Add'}</button>
+        <button type="button">Update</button>
       </div>
     )
   }

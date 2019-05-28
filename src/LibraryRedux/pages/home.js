@@ -73,22 +73,7 @@ deleteCourse=async course=>{
     "method":"DELETE"
     });
  this.setState({ courses: courses.filter(c => c.id !== course.id)});
-}
-
-addCourse=async course=>{
-    console.log(this.props);
-    const { history } = this.props;
-    const { authors } = this.state;
-    history.push('/about', {
-      course: {
-        title: '',
-        authorId:'',
-        length: '',
-        category: '',
-        watchHref:''
-      },
-      authors,
-    });
+ 
 }
 
 renderAuthorName = id => {
@@ -109,7 +94,6 @@ renderAuthorName = id => {
     return (
       <div>
         <h1>Home</h1>
-        <button type="button" onClick={this.addCourse}>Add New Course</button>
         <table>
         <thead>
         <tr>

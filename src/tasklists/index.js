@@ -59,12 +59,14 @@ componentDidMount()
         'Content-Type': 'application/json',
       },
     });
-  console.log(await res.json()); 
+   
+  const task=await res.json();
+  console.log(task);
     this.setState({ 
       taskName:'',
-      taskLists:[...taskLists, newTask]
+      taskLists:[...taskLists, task]
       });
-      this.getTasksData();
+      //this.getTasksData();
 }
 
   deleteTask=async(id)=>{
@@ -106,7 +108,7 @@ componentDidMount()
     return (
       <div>
       <h3>To Do</h3>
-      <TaskForm onChange={this.onChange} value={taskName} addListitem={this.addListitem}></TaskForm>
+      <TaskForm onChange={this.onChange} taskName={taskName} addListitem={this.addListitem}></TaskForm>
       <TaskList taskLists={data} taskDone={this.taskDone} deleteTask={this.deleteTask} ></TaskList>
       <TaskFilter showall={()=>this.changeStatus('all')} completed={()=>this.changeStatus('completed')} pending={()=>this.changeStatus('pending')}></TaskFilter>
       </div>
