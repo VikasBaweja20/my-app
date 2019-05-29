@@ -20,20 +20,50 @@ export default class about extends Component {
         }
 
     }
-    formatAuthors=()=>{
-      const {authors}=this.state;
-      const authorsList=authors.map(item=>({
-        value: item.id,
-        text: `${item.firstName} ${item.lastName}`
-      }));
-      this.setState({authors: authorsList});
+    // formatAuthors=()=>{
+    //   const {authors}=this.state;
+    //   const authorsList=authors.map(item=>({
+    //     value: item.id,
+    //     text: `${item.firstName} ${item.lastName}`
+    //   }));
+    //   this.setState({authors: authorsList});
+    // };
+
+    // componentDidMount(){
+    //   this.formatAuthors();
+    // }
+
+    submit = async (values) => {
+      console.log(values);
+      // actions.setErrors({ title: "Title is already exist" });
+      try {
+        let res = null;
+        if (values.id) {
+          res = await fetch(`http://localhost:3004/courses/${values.id}`, {
+            method: 'PUT',
+            body: JSON.stringify(values),
+            headers: {
+              accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          });
+        } else {
+          res = await fetch('http://localhost:3004/courses', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+              accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          });
+        }
+        const course = await res.json();
+        const { history } = this.props;
+        history.push('/', { course });
+      } catch (error) {
+        
+      }
     };
-
-    componentDidMount(){
-      this.formatAuthors();
-    }
-
-    
 
     changeValue=e=>{
       const { course} = this.state
@@ -43,6 +73,10 @@ export default class about extends Component {
 
   render() {
       const {course,authors}= this.state;
+      const authorsList=authors.map(item=>({
+        value: item.id,
+        text: `${item.firstName} ${item.lastName}`
+      }));
       console.log(authors);
     return (
       <div>
@@ -59,7 +93,7 @@ export default class about extends Component {
         <div>
         <label>Author</label>
         <select value={course.authorId} name='authorId' onChange={this.changeValue} >
-        {authors && authors.map(item=> <option key={item.id} value={item.value}>{item.text}</option>)}
+        {authorsList && authorsList.map(item=> <option key={item.value} value={item.value}>{item.text}</option>)}
         </select>
         </div>
         <div>
@@ -70,7 +104,7 @@ export default class about extends Component {
         <label>Category</label>
         <input type="text"  name='category' value={course.category} onChange={this.changeValue}/>
         </div>
-        <button type="button">{course.authorId?'Update':'Add'}</button>
+        <button type="submit" onClick={()=>this.submit(course)}>{course.id?'Update':'Add'}</button>
       </div>
     )
   }
