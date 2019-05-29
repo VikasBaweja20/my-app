@@ -6,11 +6,11 @@ import Footer from './Library/Components/footer';
 
 import loadable from '@loadable/component';
 
-const HomeAsync = loadable(() => import('./Library/pages/home'), {
+const HomeAsync = loadable(() => import('./LibraryRedux/pages/home'), {
   fallback: <div>Loading...</div>,
 });
 
-const AboutAsync = loadable(() => import('./Library/pages/about'), {
+const AboutAsync = loadable(() => import('./LibraryRedux/pages/about'), {
   fallback: <div>Loading...</div>,
 });
 
@@ -18,7 +18,7 @@ const TasklistAsync = loadable(() => import('./tasklists/index'), {
   fallback: <div>Loading...</div>,
 });
 
-const NoMatchAsync = loadable(() => import('./Library/pages/noMatch'), {
+const NoMatchAsync = loadable(() => import('./LibraryRedux/pages/noMatch'), {
   fallback: <div>Loading...</div>,
 });
 

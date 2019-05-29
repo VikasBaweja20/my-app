@@ -104,7 +104,7 @@
       "title": "Clean Code: Writing Code for Humans",
       "watchHref": "http://www.pluralsight.com/courses/writing-clean-code-humans",
       "authorId": "dan-wahlin",
-      "length": "3:101",
+      "length": "3:1012",
       "category": "Software Practices"
     },
     {
@@ -122,6 +122,14 @@
       "category": "Professional Development",
       "watchHref": "zeolearn.com",
       "id": "3WSGgY0"
+    },
+    {
+      "title": "Building Applications in React and Flux",
+      "authorId": "dan-wahlin",
+      "length": "3:10",
+      "category": "Software Practices",
+      "watchHref": "http://www.pluralsight.com/courses/writing-clean-code-humans",
+      "id": "40baT8M"
     }
   ],
   "authors": [
