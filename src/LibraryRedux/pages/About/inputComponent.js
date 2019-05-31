@@ -10,7 +10,7 @@ class inputComponent extends Component {
         return (
             <div>
             <label>{this.props.labelName}</label>
-            <input type="text" name={this.props.textName} value={this.props.value} onChange={this.onChange} />
+            <input type="text" name={this.props.textName} value={this.props.value} onChange={this.props.onChange} />
             </div>           
         )
     }

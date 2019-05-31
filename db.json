@@ -112,16 +112,8 @@
       "title": "Edited Architecting Applications for the Real World",
       "watchHref": "http://www.pluralsight.com/courses/architecting-applications-dotnet",
       "authorId": "cory-house",
-      "length": "2:52",
+      "length": "2:521",
       "category": "Software Architecture"
-    },
-    {
-      "title": "React Training",
-      "authorId": "dan-wahlin",
-      "length": "24",
-      "category": "Professional Development",
-      "watchHref": "zeolearn.com",
-      "id": "3WSGgY0"
     },
     {
       "title": "Building Applications in React and Flux",
@@ -130,6 +122,14 @@
       "category": "Software Practices",
       "watchHref": "http://www.pluralsight.com/courses/writing-clean-code-humans",
       "id": "40baT8M"
+    },
+    {
+      "title": "React Training",
+      "authorId": "cory-house",
+      "length": "24.1",
+      "category": "Professional Development",
+      "watchHref": "zeolearn.com",
+      "id": "1cLun4y"
     }
   ],
   "authors": [

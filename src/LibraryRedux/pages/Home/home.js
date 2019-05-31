@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-
+import CourseList from './courseList';
 export default class home extends Component {
     static propTypes = {
         history: PropTypes.object.isRequired,
@@ -103,40 +103,14 @@ renderAuthorName = id => {
   render() {
       const {courses,loading}=this.state;
       if (loading){
-          return (<div><h1>Loading</h1></div>);
+          return (<div><h1>Loading...</h1></div>);
       }
  /*why not arrow operator for getting author name*/
     return (
       <div>
         <h1>Home</h1>
         <button type="button" onClick={this.addCourse}>Add New Course</button>
-        <table>
-        <thead>
-        <tr>
-        <th>Title</th>
-        <th>Url</th>
-        <th>Author</th>
-        <th>Length</th>
-        <th>Category</th>
-        <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        {
-            courses.map(course=>(
-                <tr key={course.id}>
-                <td>{course.title}</td>
-                <td><a href={course.watchHref}>Click here</a></td>
-                <td>{this.renderAuthorName(course.authorId)}</td>
-                <td>{course.length}</td>
-                <td>{course.category}</td>
-                <td><button type='button' onClick={()=>this.editCourse(course)}>Edit</button></td>
-                <td><button type='button' onClick={()=>this.deleteCourse(course)}>Delete</button></td>
-                </tr>
-            ))
-        }
-        </tbody>
-        </table>
+       <CourseList courses={courses} editCourse ={this.editCourse} deleteCourse = {this.deleteCourse} renderAuthorName={this.renderAuthorName} />
       </div>
     )
   }
