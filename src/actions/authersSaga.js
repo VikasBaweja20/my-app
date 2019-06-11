@@ -1,5 +1,5 @@
 // eslint-disable-next-line object-curly-newline
-import { all, takeEvery, call, put } from 'redux-saga/effects';
+import { all, takeEvery, call, put } from './node_modules/redux-saga/effects';
 
 function* getAuthors() {
   try {

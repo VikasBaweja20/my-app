@@ -5,6 +5,7 @@ const initialState = {
   };
   
   export default (state = initialState, { type, payload }) => {
+    console.log(type, payload);
     switch (type) {
       case 'FETCH_AUTHORS_REQUEST':
         return { ...state, loading: true };

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Formik, Field } from 'formik';
 import InputComponentField  from './inputComponentField'
 import SelectComponentField  from './selectComponentField';
-import { string, object } from 'yup';
+
 
 const formJson = [
   {
